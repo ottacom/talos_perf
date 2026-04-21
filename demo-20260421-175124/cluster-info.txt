@@ -1,0 +1,26 @@
+=== Kubernetes server version ===
+v1.35.4
+
+=== Nodes ===
+NAME      STATUS   ROLES           AGE     VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE          KERNEL-VERSION   CONTAINER-RUNTIME
+dgx052    Ready    <none>          3h32m   v1.35.2   10.10.5.50    <none>        Talos (v1.12.6)   6.18.18-talos    containerd://2.1.6
+dgx053    Ready    <none>          3h32m   v1.35.2   10.10.5.51    <none>        Talos (v1.12.6)   6.18.18-talos    containerd://2.1.6
+k8s-m01   Ready    control-plane   6h15m   v1.35.2   10.10.5.11    <none>        Talos (v1.12.6)   6.18.18-talos    containerd://2.1.6
+k8s-m02   Ready    control-plane   6h16m   v1.35.2   10.10.5.12    <none>        Talos (v1.12.6)   6.18.18-talos    containerd://2.1.6
+k8s-m03   Ready    control-plane   6h16m   v1.35.2   10.10.5.13    <none>        Talos (v1.12.6)   6.18.18-talos    containerd://2.1.6
+
+=== Total GPUs advertised ===
+dgx052: 8 GPUs, Talos (v1.12.6)
+dgx053: 8 GPUs, Talos (v1.12.6)
+k8s-m01: 0 GPUs, Talos (v1.12.6)
+k8s-m02: 0 GPUs, Talos (v1.12.6)
+k8s-m03: 0 GPUs, Talos (v1.12.6)
+
+=== Control plane HA ===
+10.10.5.11 10.10.5.12 10.10.5.13
+=== Cilium status (if installed) ===
+cilium-4klhl Running
+cilium-ftfgr Running
+cilium-rvs72 Running
+cilium-sshkf Running
+cilium-whxgw Running
