@@ -1,0 +1,20 @@
+Host *.secureremote.dcai.dk secureremote.dcai.dk
+    UserKnownHostsFile C:\Users\samue\.tsh\known_hosts
+    IdentityFile       C:\Users\samue\.tsh\keys\secureremote.dcai.dk\madden
+    CertificateFile    C:\Users\samue\.tsh\keys\secureremote.dcai.dk\madden-ssh\secureremote.dcai.dk-cert.pub
+
+Host *.secureremote.dcai.dk !secureremote.dcai.dk
+    Port 3022
+    ProxyCommand "C:\Program Files\Teleport\resources\bin\tsh.exe" proxy ssh --cluster=secureremote.dcai.dk --proxy=secureremote.dcai.dk:443 %r@%h:%p
+
+Host hpc-login01
+    Hostname slurm-login-01.hpc.ite.dcai.dk
+    User     madden
+    Port     3022
+    ProxyCommand "C:\Program Files\Teleport\resources\bin\tsh.exe" proxy ssh --cluster=secureremote.dcai.dk --proxy=secureremote.dcai.dk:443 %r@%h:%p
+
+Host hpc-login02
+    Hostname slurm-login-02.hpc.ite.dcai.dk
+    User     madden
+    Port     3022
+    ProxyCommand "C:\Program Files\Teleport\resources\bin\tsh.exe" proxy ssh --cluster=secureremote.dcai.dk --proxy=secureremote.dcai.dk:443 %r@%h:%p
