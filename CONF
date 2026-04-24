@@ -1,0 +1,22 @@
+# ── Teleport base (only once) ─────────────────
+Host *.secureremote.dcai.dk secureremote.dcai.dk
+    UserKnownHostsFile ~/.tsh/known_hosts
+    IdentityFile       ~/.tsh/keys/secureremote.dcai.dk/<your-username>
+    CertificateFile    ~/.tsh/keys/secureremote.dcai.dk/<your-username>-ssh/secureremote.dcai.dk-cert.pub
+
+Host *.secureremote.dcai.dk !secureremote.dcai.dk
+    Port 3022
+    ProxyCommand /usr/local/bin/tsh proxy ssh --cluster=secureremote.dcai.dk --proxy=secureremote.dcai.dk:443 %r@%h:%p
+
+# ── Alias  for VSCode Remote-SSH  (It's up to you)─────────────
+Host hpc-login01
+    Hostname slurm-login-01.hpc.ite.dcai.dk
+    User     <your-username>
+    Port     3022
+    ProxyCommand /usr/local/bin/tsh proxy ssh --cluster=secureremote.dcai.dk --proxy=secureremote.dcai.dk:443 %r@%h:%p
+
+Host hpc-login02
+    Hostname slurm-login-02.hpc.ite.dcai.dk
+    User     <your-username>
+    Port     3022
+    ProxyCommand /usr/local/bin/tsh proxy ssh --cluster=secureremote.dcai.dk --proxy=secureremote.dcai.dk:443 %r@%h:%p
